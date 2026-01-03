@@ -57,10 +57,10 @@ Detailed project documentation is available in the [`docs/`](./docs) directory:
 ---
 
 ## Project Status
-- ✔ System design completed  
-- ✔ Core features implemented (local deployment)  
-- ✔ Documentation in progress  
-- ⏳ Refactoring and potential open-sourcing planned  
+- System design completed  
+- Core features implemented (local deployment)  
+- Documentation completed
+- Refactoring and potential improvements planned  
 
 ---
 
