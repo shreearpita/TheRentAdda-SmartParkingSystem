@@ -49,3 +49,32 @@ and authentication credentials.
 
 This architecture ensures clear separation of responsibilities while remaining simple enough for a prototype
 and academic demonstration environment.
+
+### Architectural Style
+The Rent Adda is implemented as a server-rendered, database-driven web application. The system follows a
+classic three-layer logical separation:
+
+- **Presentation Layer:** HTML, CSS, and JavaScript rendered in the browser
+  
+- **Application Layer:** PHP scripts handling business logic and workflows
+  
+- **Data Layer:** MySQL relational database for persistent storage
+  
+The architecture prioritizes simplicity, role separation, and feasibility for a prototype-scale deployment while
+maintaining clear control flows and data consistency.
+
+## Technology Stack
+
+**Frontend:** HTML, CSS, JavaScript
+
+**Backend:** PHP
+
+**Database:** MySQL (SQL)
+
+**Server Environment:** XAMPP (Apache + MySQL, localhost)
+
+**External Services:**
+
+- Google Maps API (location & visualization)
+
+- Third-party OTP service (email and phone verification)
