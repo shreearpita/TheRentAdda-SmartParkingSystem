@@ -15,5 +15,37 @@ administrative supervision
 The following diagram represents the high-level architecture of the Rent Adda Smart Parking System. It
 illustrates the interaction between users, the web application, backend services, database, and external
 integrations.
-![High-Level Architectural Diagram](https://github.com/shreearpita/TheRentAdda-SmartParkingSystem/blob/main/docs/HL%20Arch.png)
 
+![High-Level Architectural Diagram](https://github.com/shreearpita/TheRentAdda-SmartParkingSystem/blob/main/docs/HL%20Arch.png)
+### Architectural Explanation
+**End Users** interact with the system through a standard web browser. All three roles (Admin, Owner,
+Parker) use the same application with role-based dashboards.
+
+**Frontend Layer** provides the user interface and basic client-side validation. It communicates with
+the backend using HTTP form submissions and JavaScript-triggered requests.
+
+**Backend Layer (PHP)** acts as the core of the system:
+
+-Handles authentication and OTP verification
+
+-Enforces role-based access control
+
+-Processes parking space listings, selection, and administrative approvals
+
+-Manages interaction with both the database and external services
+
+**MySQL Database** stores persistent system data, including users, owners, parking space information,
+and authentication credentials.
+
+**Google Maps API** is integrated to support:
+
+-Location detection
+
+-Visualization of nearby parking spaces
+
+-Distance-based discovery
+
+**OTP Service** is used for secure authentication via email and phone-based verification.
+
+This architecture ensures clear separation of responsibilities while remaining simple enough for a prototype
+and academic demonstration environment.
