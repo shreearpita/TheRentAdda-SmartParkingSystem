@@ -78,3 +78,27 @@ maintaining clear control flows and data consistency.
 - Google Maps API (location & visualization)
 
 - Third-party OTP service (email and phone verification)
+
+## Component Breakdown
+
+**Frontend Layer**
+Multi-page web interface
+Separate interfaces for Admin, Owner, and Parker dashboards
+Client-side validation and basic interactivity using JavaScript
+**Backend Layer**
+PHP scripts handle:
+Login and registration
+OTP verification
+Role-based access control
+Parking space management
+Administrative approvals
+Each functional page is typically backed by a corresponding PHP file (e.g., 
+**Database Layer**
+The system uses a relational SQL database with the following core tables:
+admin – stores administrator credentials and details
+owner – stores verified owner information
+login.html + 
+login.php ).
+cost_info – stores parking space details such as pricing and availability
+password – manages authentication-related data
+These tables collectively support user management, space listing, and booking workflows.
