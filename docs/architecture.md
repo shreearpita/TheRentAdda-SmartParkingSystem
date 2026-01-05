@@ -81,24 +81,96 @@ maintaining clear control flows and data consistency.
 
 ## Component Breakdown
 
-**Frontend Layer**
-Multi-page web interface
-Separate interfaces for Admin, Owner, and Parker dashboards
-Client-side validation and basic interactivity using JavaScript
-**Backend Layer**
-PHP scripts handle:
-Login and registration
-OTP verification
-Role-based access control
-Parking space management
-Administrative approvals
-Each functional page is typically backed by a corresponding PHP file (e.g., 
-**Database Layer**
-The system uses a relational SQL database with the following core tables:
-admin – stores administrator credentials and details
-owner – stores verified owner information
-login.html + 
-login.php ).
-cost_info – stores parking space details such as pricing and availability
-password – manages authentication-related data
-These tables collectively support user management, space listing, and booking workflows.
+### Frontend Layer
+
+**Multi-page web interface**
+
+- Separate dashboards and UI flows for Admin, Owner, and Parker
+
+- Pages are role-specific and rendered using HTML and CSS
+
+**Client-side logic (JavaScript)**
+
+- Form validation (login, registration, updates)
+
+- Basic UI interactivity (select parking space, submit actions)
+
+- Error handling before form submission
+
+**User Interaction**
+
+- Users interact with the system through a browser using HTTP requests
+
+- Each major action (login, register, book, update) maps to a backend PHP script
+
+**Maps Visualization**
+
+- Google Maps is used on the Parker dashboard to display nearby parking locations using markers
+
+### Backend Layer
+
+**PHP Application Layer**
+
+- Each functional page is backed by a corresponding PHP script
+(e.g., login.html → login.php, owner_dashboard.html → owner_dashboard.php)
+
+**Authentication & Authorization**
+
+- Handles user login and registration
+
+- OTP verification via third-party services (email and phone)
+
+- Role-based access control ensures Admin, Owner, and Parker can only access permitted actions
+
+**Business Logic**
+
+- Owner space registration and updates
+
+- Admin approval or rejection of owner registrations
+
+- Parking space listing, availability updates, and selection logic
+
+**Session Management**
+
+- PHP sessions are used to maintain authenticated user state across requests
+
+**External Service Integration**
+
+- Google Maps API for location visualization
+
+- OTP service API for secure user verification
+
+### Database Layer
+**Relational SQL Database (MySQL via XAMPP)**
+
+- Used for persistent storage of users, parking spaces, and system data
+
+- All database interactions are handled through PHP scripts
+
+**Core Tables**
+
+- admin
+Stores administrator account details and credentials used for system supervision and approvals
+
+- owner
+Stores verified owner information, including login details and registered parking spaces
+
+- parker
+Stores parker (end-user) account details and parking activity history
+
+- cost_info
+Stores parking space metadata such as location, pricing, availability status, and timing
+
+**Data Handling**
+
+- Authentication credentials are stored directly within respective user tables (admin, owner, parker)
+
+- PHP scripts perform CRUD operations for:
+
+    - User registration and login
+
+    - Owner verification and approvals
+
+    - Parking space creation, updates, and selection
+
+    - Availability and pricing management
