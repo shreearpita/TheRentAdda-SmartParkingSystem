@@ -15,3 +15,5 @@ administrative supervision
 The following diagram represents the high-level architecture of the Rent Adda Smart Parking System. It
 illustrates the interaction between users, the web application, backend services, database, and external
 integrations.
+![High-Level Architectural Diagram](https://github.com/shreearpita/TheRentAdda-SmartParkingSystem/blob/main/docs/HL%20Arch.png)
+
