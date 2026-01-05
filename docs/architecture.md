@@ -174,3 +174,4 @@ Stores parking space metadata such as location, pricing, availability status, an
     - Parking space creation, updates, and selection
 
     - Availability and pricing management
+
