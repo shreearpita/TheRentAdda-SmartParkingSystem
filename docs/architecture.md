@@ -225,13 +225,69 @@ actions trigger backend processing, database updates, and UI responses.
 A detailed database schema, table relationships, and field-level design are documented separately in the [Database Design](database-design.md) document.
 
 ## API & External Services Integration 
+### Google Maps API
+Rent Adda integrates Google Maps APIs to support location-based discovery:
+
+- User location detection using latitude and longitude
+
+- Visualization of nearby parking spaces using map markers
+  
+- Distance calculation to assist users in identifying proximate parking options
+
+This integration provides an intuitive, map-based interface similar to commonly used navigation and service
+platforms.
+
+### OTP Services
+- Email-based OTP delivery
+- Phone-based OTP delivery
+- Used for secure authentication
+
+The system uses server-side PHP integrations rather than a standalone REST API layer
 
 ## Authentication & Authorization Flow
+### Authentication
+
+- Credential-based login
+- OTP verification via third-party service
+- Authenticated session creation
+
+### Authorization (RBAC)
+
+- Admin: Full supervisory access
+- Owner: Space management (post-approval)
+- Parker: Space discovery and selection
+
+Backend scripts enforce role checks on every protected action.
 
 ## Deployment Architecture
+- Localhost-based deployment using XAMPP
+- Apache web server executing PHP scripts
+- MySQL database for persistent storage
+
+The deployment reflects a prototype and demonstration environment.
 
 ## Design Decisions & Trade-offs
+- Chose PHP + MySQL for simplicity and accessibility
+- Used server-rendered pages instead of SPA for faster development
+- Deferred payment and real-time sensors to reduce complexity
+- Prioritized conceptual completeness over production optimization
 
 ## Scalability Considerations
-
+- Modular role-based design allows future expansion
+  
+- Can migrate to cloud hosting
+  
+- Can introduce REST APIs and microservices
+  
+- Can integrate real-time IoT sensors for automation
+  
 ## Limitations & Known Constraints
+- No payment gateway integration
+- No real-time occupancy detection
+- Limited scalability due to monolithic PHP architecture
+- Prototype-level security and performance
+
+## Summary
+Rent Adda demonstrates a complete, role-driven smart parking system architecture suitable for academic,
+prototype, and early-stage product exploration. The system provides a strong foundation for future
+enhancements, real-world deployment, and scalable smart city integrations.
