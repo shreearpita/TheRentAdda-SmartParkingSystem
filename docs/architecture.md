@@ -174,4 +174,64 @@ Stores parking space metadata such as location, pricing, availability status, an
     - Parking space creation, updates, and selection
 
     - Availability and pricing management
+      
+## Data Flow Archotecture
+The data flow architecture describes how information moves through the system across different user roles
+and system components. Rent Adda follows a request–process–persist–respond pattern, where user
+actions trigger backend processing, database updates, and UI responses.
 
+![Data Flow Architecture](https://github.com/shreearpita/TheRentAdda-SmartParkingSystem/blob/main/docs/Data%20Architecture.png)
+### Role Based Flow
+**Owner Registration & Verification** 
+1. Owner submits registration data
+2. Data stored as unverified
+3. Admin reviews and approves
+4. Owner gains listing privileges
+
+**Parking Space Listing** 
+1. Verified owner submits space details
+2. Data stored in cost_info table
+3. Space becomes visible to parkers
+   
+**Parker Discovery & Selection** 
+1. Parker logs in
+2. Location retrieved via Google Maps API
+3. Nearby spaces queried from database
+4. Parker selects a space using Select/Book option
+   
+**Authentication Flow** 
+1. User submits credentials
+2. OTP generated and delivered
+3. OTP validated
+4. Session created
+
+### Conceptual Extensions
+- QR-code-based slot locking
+
+- Entry/exit-based availability updates
+
+### Database Design
+**Core Tables**
+- admin: Stores administrator details
+- owner: Stores verified owner information
+- cost_info: Stores parking space data (location, price, availability)
+- parker: Stores parker's account detail and activity
+
+**Relationships**
+- Admin verifies Owners
+- Owners manage multiple parking spaces
+- Parkers interact with parking spaces through selection and booking
+  
+A detailed database schema, table relationships, and field-level design are documented separately in the [Database Design](database-design.md) document.
+
+## API & External Services Integration 
+
+## Authentication & Authorization Flow
+
+## Deployment Architecture
+
+## Design Decisions & Trade-offs
+
+## Scalability Considerations
+
+## Limitations & Known Constraints
