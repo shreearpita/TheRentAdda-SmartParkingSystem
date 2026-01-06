@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This document describes the database design for **Rent Adda**, a smart parking system developed as a national-level exhibition project. The database is designed using a **relational SQL model** and serves as the backbone for user management, parking space listing, booking workflows, and administrative control.
+This document describes the database design for **The Rent Adda**, a smart parking system developed as a national-level exhibition project. The database is designed using a **relational SQL model** and serves as the backbone for user management, parking space listing, booking workflows, and administrative control.
 
 The primary objectives of the database design are:
 
@@ -10,9 +10,8 @@ The primary objectives of the database design are:
 * Clear separation of roles and responsibilities
 * Simplicity suitable for a prototype while remaining extensible for future production use
 
-The database is implemented using **MySQL**, hosted locally via **XAMPP**, and accessed through PHP scripts.
+The database is implemented using **MySQL**, hosted locally via **XAMPP**, and accessed through **PHP** scripts.
 
----
 
 ## 2. Design Principles
 
@@ -23,8 +22,6 @@ The database design follows standard industry and academic principles:
 * **Relational integrity**: Logical relationships exist between users, parking spaces, and administrative actions
 * **Scalability readiness**: Schema can be extended to support payments, sensors, and real-time occupancy in the future
 
----
-
 ## 3. Entity Overview
 
 The database consists of the following core entities:
@@ -32,11 +29,10 @@ The database consists of the following core entities:
 1. Admin
 2. Owner
 3. Parker
-4. Parking Space / Cost Information (`cost_info`)
+4. Cost Information (`cost_info`)
 
 Each entity corresponds to a table in the database and represents a real-world actor or resource in the system.
 
----
 
 ## 4. Table Definitions
 
