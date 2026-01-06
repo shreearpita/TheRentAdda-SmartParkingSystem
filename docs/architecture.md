@@ -175,7 +175,7 @@ Stores parking space metadata such as location, pricing, availability status, an
 
     - Availability and pricing management
       
-## Data Flow Archotecture
+## Data Flow Architecture
 The data flow architecture describes how information moves through the system across different user roles
 and system components. Rent Adda follows a request–process–persist–respond pattern, where user
 actions trigger backend processing, database updates, and UI responses.
